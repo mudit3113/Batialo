@@ -1,0 +1,19 @@
+<header>
+    <div id="left"> <a href="/"> CODEIAL </a> </div>
+    <div id="right">
+        <% if (locals.user){ %>
+            <div id="div1"> Hello <%= user.name %> !!</div>
+            <div id="div2"> <a href="/users/profile">My Profile  </a></div>
+            <div id="div3"><a href="/users/signout/"> Sign out </a>
+                </div>
+
+           
+            
+        <% } else{ %>
+            <div id="div4"><a href="/users/signin">Sign In </a></div>
+            <div id="div5"><a href="/users/signup">Sign Up </a></div>
+        
+        <% } %>
+
+    </div>
+</header>

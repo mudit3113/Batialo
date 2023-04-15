@@ -1,0 +1,31 @@
+body{
+    margin:0 ;
+    // text-align:center
+
+    #layout-main{
+        height:100%;
+        display: flex;
+
+        #header-div{
+            height: 5%;
+            margin-bottom: 5px;
+        }
+
+        #body-div{
+            height: 90%;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 20px;
+            color: dodgerblue ;
+
+            
+
+        }
+
+        #footer-div{
+            height:5%;
+        }
+
+    }
+}

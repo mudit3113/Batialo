@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/css/users.css">
+
+<h1><%= profile_user.name %>'s Profile</h1>
+
+
+
+<% if(user.id == profile_user.id ){ %>
+    <img src="<%=user.avatar%>" id="output" alt="<%=user.name %>" width="100px">
+    <p><%= profile_user.name %> </p>
+    <p> <%= profile_user.email %></p>
+    <!-- creating a form for update -->
+    <form action="/users/update/<%= profile_user.id %>" enctype="multipart/form-data" method="POST">
+        <input type="text" name="name" placeholder="Your name" value="<%= profile_user.name %>" required>
+        <input type="email" name="email" placeholder="Your email" value="<%= profile_user.email %>" required>
+
+        <input type="file" name="avatar" placeholder="Profile Picture" accept="image/*" onchange="loadFile(event)" >
+
+        <input type="submit" value="Update">
+    </form>
+<% }else{%>
+    <img src="<%=profile_user.avatar%>" alt="<%=profile_user.name %>" width="100px">
+    <p><%= profile_user.name %> </p>
+    <p> <%= profile_user.email %></p>
+    <!-- add a button to toggle a friend -->
+ 
+  
+<%}%>
+
+    
+<script src="/js/profile_picture_preview.js"></script>
+<!-- add a js script file for toggle friend   -->
+
+    

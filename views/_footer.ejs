@@ -1,0 +1,19 @@
+<footer>
+    <div id="left_f">
+        <div> <p>© Mudit Garg. All Rights Reserved</p></div>
+        <div id="footer_details">
+            <div><a href="/">Home</a></div>
+            <% if(locals.user){ %>
+            <div><a href="/users/profile">Profile</a></div>   
+            <% } else { %> 
+            <div> <a href="/users/signin">Sign In</a> </div>
+            <% } %>
+        </div>
+
+    </div>
+    <div id="right_f">
+
+    </div>
+
+
+</footer>

@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container">
+    <div id="left-of-feed-posts">
+
+    </div>
+    <div id="feed-posts">
+        <h4> POSTS </h4>
+        <% if(locals.user){ %>
+            <form action="/posts/create" id="new-post-form" method="POST">
+                <textarea name="content" cols="30" rows="3"></textarea>
+                <input type="submit" value="Post">
+            </form>
+            <% } %>
+
+                <div id='posts-list-container'>
+                    <ul>
+                        <% for( post of posts) { %>
+                            <%- include('_post'); %>
+
+                                <%} %>
+                    </ul>
+                </div>
+    </div>
+
+    <div id="user-friends-combo">
+        <!-- if user is signed in then only show the div else not -->
+        <div id="user-friends">
+        <!-- display the friend list -->
+        </div>
+
+        <div id="user-only">
+            <h4>Users List</h4>
+            <% for ( u of all_users){ %>
+                <p>
+                    <a href="/users/profile/<%= u.id %>">
+                        <%= u.name%>
+                    </a>
+                </p>
+                <%}%>
+        </div>
+        
+
+    </div>
+
+</div>
+<script src = "/js/home_posts.js"></script>
+<script src="/js/home_posts_comments.js"></script>
+<script src="/js/toggle_likes.js"></script>
+<script>
+    $('.toggle-like-button').each(function(){
+       let toggleLike = new ToggleLike(this);
+   });
+</script>

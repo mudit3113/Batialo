@@ -1,0 +1,17 @@
+body {
+  margin: 0; }
+  body #layout-main {
+    height: 100%;
+    display: flex; }
+    body #layout-main #header-div {
+      height: 5%;
+      margin-bottom: 5px; }
+    body #layout-main #body-div {
+      height: 90%;
+      width: 100%;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      margin-left: 20px;
+      color: dodgerblue; }
+    body #layout-main #footer-div {
+      height: 5%; }
