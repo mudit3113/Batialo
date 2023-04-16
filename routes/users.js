@@ -4,8 +4,11 @@ const passport = require('passport');
 
 const usersController = require('../controllers/users_controller');
 
+const friendsController = require('../controllers/friends_controller')
 
 router.get('/profile/:id', usersController.profile);
+
+router.get('/profile/friends/toggle-friendship', friendsController.toggleFriendship);
 
 router.post('/update/:id', usersController.update );
 

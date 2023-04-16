@@ -3,7 +3,7 @@
     <div id="right">
         <% if (locals.user){ %>
             <div id="div1"> Hello <%= user.name %> !!</div>
-            <div id="div2"> <a href="/users/profile">My Profile  </a></div>
+            <div id="div2"> <a href="/users/profile/<%= locals.user._id%>">My Profile  </a></div>
             <div id="div3"><a href="/users/signout/"> Sign out </a>
                 </div>
 

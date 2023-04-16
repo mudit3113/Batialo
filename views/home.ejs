@@ -26,7 +26,38 @@
     <div id="user-friends-combo">
         <!-- if user is signed in then only show the div else not -->
         <div id="user-friends">
-        <!-- display the friend list -->
+            <!-- display the friend list -->
+            <% if(user) { %>
+                <div class="friends-list">
+                    <h4>My Friends</h4>
+                    <% if(locals.user.friends.length == 0) {%>
+                        <div class="no-friends"> No friends found!</div>
+                        <% }else{ %>
+                            <% for(friends of user.friends){ %>
+                                <% if(friends.from_user.id==locals.user.id){%>
+                                    <div>
+                                        <a class="friends-item" href="/users/profile/<%=friends.to_user._id%>">
+                                            <div class="friends-name">
+                                                <%= friends.to_user.name %>
+                                            </div>
+                                            <br>
+                                        </a>
+                                    </div>
+                                <%}%>
+                                <% if(friends.to_user.id==locals.user.id) {%>
+                                    <div>
+                                        <a class="friends-item"
+                                            href="/users/profile/<%=friends.from_user._id%>">
+                                            <div class="friends-name">
+                                                <%= friends.from_user.name %>
+                                            </div>
+                                            <br>
+                                        </a>
+                                    </div>
+                                <% } %>
+                            <%}%>
+                        <%}%>
+            <%}%>
         </div>
 
         <div id="user-only">
@@ -39,16 +70,16 @@
                 </p>
                 <%}%>
         </div>
-        
+
 
     </div>
 
 </div>
-<script src = "/js/home_posts.js"></script>
+<script src="/js/home_posts.js"></script>
 <script src="/js/home_posts_comments.js"></script>
 <script src="/js/toggle_likes.js"></script>
 <script>
-    $('.toggle-like-button').each(function(){
-       let toggleLike = new ToggleLike(this);
-   });
+    $('.toggle-like-button').each(function () {
+        let toggleLike = new ToggleLike(this);
+    });
 </script>

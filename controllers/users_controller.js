@@ -5,14 +5,28 @@ const Friendships = require('../models/friendship');
 
 
 
-module.exports.profile = async function (req,res) {
+module.exports.profile = async function (req, res) {
     try {
-        let user = await User.findById(req.params.id);
-        
+        let user = await User.findById({ _id: req.params.id });
+        let friendship1, friendship2
+
+        friendship1 = await Friendships.findOne({
+            from_user: req.user,
+            to_user: req.params.id,
+        });
+
+        friendship2 = await Friendships.findOne({
+            from_user: req.params.id,
+            to_user: req.user,
+        });
+
+        let populated_user = await User.findById(req.user).populate('friends');
+
         req.flash('success', "welcome to " + user.name + "'s Profile Page");
         return res.render('users', {
             title: "User profile",
-            profile_user: user
+            profile_user: user,
+            populated_user: populated_user
         })
     } catch (err) {
         req.flash("error", err);
@@ -23,17 +37,17 @@ module.exports.update = async function (req, res) {
     if (req.user.id == req.params.id) {
         try {
             let user = await User.findById(req.params.id);
-            User.uploadedAvatar(req,res,function(err){
-                if(err) {console.log('*****Multer Error', err)}
+            User.uploadedAvatar(req, res, function (err) {
+                if (err) { console.log('*****Multer Error', err) }
                 // console.log(req.file);
                 user.name = req.body.name;
-                user.email= req.body.email;
+                user.email = req.body.email;
 
-                if(req.file){
-                    if(user.avatar){
-                        let currAvatarPath = path.join(__dirname,'..', user.avatar);
-                        if(fs.existsSync(currAvatarPath)){
-                            fs.unlinkSync(path.join(__dirname, '..' , user.avatar))
+                if (req.file) {
+                    if (user.avatar) {
+                        let currAvatarPath = path.join(__dirname, '..', user.avatar);
+                        if (fs.existsSync(currAvatarPath)) {
+                            fs.unlinkSync(path.join(__dirname, '..', user.avatar))
                         }
                     }
                     // this is saving the path of the uploaded file into avatar field in the user
