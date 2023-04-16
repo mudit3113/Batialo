@@ -27,12 +27,12 @@ module.exports.toggleFriendship = async function(req,res){
                 from_user : req.user
             });
     
-            toUser.friends.push(friendship);
-            fromUser.friends.push(friendship);
+            toUser.friends.push(friendship._id);
+            fromUser.friends.push(friendship._id);
             toUser.save();
             fromUser.save();
         }
-    return res.redirect("/");
+    return res.redirect('back');
 
     }catch(err){
         console.log("error in toggling friendhip", err);
