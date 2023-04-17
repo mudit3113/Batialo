@@ -3,6 +3,7 @@
 <div id="home-container">
     <div id="left-of-feed-posts">
 
+
     </div>
     <div id="feed-posts">
         <h4> POSTS </h4>
@@ -71,10 +72,17 @@
                 <%}%>
         </div>
 
-
+        <div id="chat-box-div">
+            <%- include('_chat_box') %>
+    
+        </div>    
     </div>
-
+    
 </div>
+
+
+
+
 <script src="/js/home_posts.js"></script>
 <script src="/js/home_posts_comments.js"></script>
 <script src="/js/toggle_likes.js"></script>
@@ -83,3 +91,11 @@
         let toggleLike = new ToggleLike(this);
     });
 </script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
+<script src="/js/chat_engine.js">   
+</script>
+<% if(locals.user){%>
+    <script>
+        new ChatEngine('user-chat-box', '<%=locals.user.email%>')
+    </script>
+<%}%>
