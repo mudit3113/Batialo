@@ -1,6 +1,6 @@
 // import { io } from "socket.io-client";
 class ChatEngine {
-    constructor(chatBoxId, userEmail) {
+    constructor(chatBoxId, userEmail, userAvatar) {
         this.chatBox = $(`#${chatBoxId}`);
         this.userEmail = userEmail;
         //Requestion for connection with chat server
@@ -53,9 +53,9 @@ class ChatEngine {
                 'html': data.message
             }));
 
-            newMessage.append($('<sub>', {
-                'html': data.user_email
-            }));
+            // newMessage.append($('<sub>', {
+            //     'html': data.user_email
+            // }));
             newMessage.addClass(messageType);
             $('#chat-messages-list').append(newMessage);
         });

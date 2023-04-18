@@ -1,19 +1,28 @@
 <link rel="stylesheet"  type="text/css" href="/css/chat_box.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 <!-- code for chat box  -->
 <% if(locals.user){ %>
     <div id="user-chat-box">
+        <div id="chat-nav">
+            <div> Messenger</div>
+            <div><a> <i class="fa fa-expand"></i></a></div>
+            <div><a> <i class="fa fa-window-minimize"></i></a></div>
+            <div><a> <i class="fa fa-window-close"></i></a></div>
+        </div>
         <ul id="chat-messages-list">
             <li class="other-message">
                 <span>
-                    Other Message
+                    
                 </span>
 
             </li>
             <li class="self-message">
                 <span>
-                    Self Message
+                    
                 </span>
+
 
             </li>
 

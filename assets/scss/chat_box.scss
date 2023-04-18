@@ -1,13 +1,26 @@
 #user-chat-box{
     position: fixed;
-    bottom: 10px;
-    right: 10px;
+    bottom: 0px;
+    left: 10px;
     border: 1px dashed gray;
     height: 350px;
     width: 300px;
     padding: 5px;
     padding-bottom: 40px;
     box-shadow: 1px 1px 1px 1px black;
+    z-index: 10;
+
+    #chat-nav{
+        position: inherit;
+        height:30px;
+        width: 300px;
+        background-color: lightgray;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        text-align: center;
+
+    }
 
     #chat-messages-list{
         list-style: none;
@@ -21,8 +34,12 @@
             padding: 5px;
             span{
                 display: inline-block;
-                padding: 15px;
+                padding: 5px;
+                width:auto;
                 background-color: #ffa0a0;
+                color: white;
+                border-radius: 20%;
+
             }
         }
 
@@ -31,8 +48,11 @@
             padding: 5px;
             span{
                 display: inline-block;
-                padding: 15px;
-                background-color: #a0dcff;
+                width:auto;
+                padding: 5px;
+                background-color: dodgerblue;
+                color: white;
+                border-radius: 20%;
             }
         }
     }
@@ -47,12 +67,14 @@
         #chat-message-input{
             height: 50%;
             width: 70%;
+            border-radius: 2%;
         }
 
         #send-message{
             height: 50%;
             width: 30%;
             font-size: 25px;
+            font-family: 'Courier New', Courier, monospace;
             color:#fff;
             border: none;
             background: #58d258;

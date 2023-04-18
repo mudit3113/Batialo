@@ -5,11 +5,13 @@
         width:25%;
         padding: 10px;
         height: 100%;
+        z-index: 10;
     }
     #feed-posts{
         width:50%;
         padding:10px;
         margin-bottom: 100px;
+        z-index: 5;
 
     }
     #user-friends-combo{
@@ -20,6 +22,21 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        z-index: 2;
+
+        #user-friends{
+            height:13%;
+            overflow: auto;
+
+        }
+
+        #user-only{
+            height:13%;
+            overflow: auto;
+
+        }
+
+
 
     }
 }

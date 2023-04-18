@@ -2,6 +2,10 @@
 
 <div id="home-container">
     <div id="left-of-feed-posts">
+        <div id="chat-box-div">
+            <%- include('_chat_box') %>
+    
+        </div> 
 
 
     </div>
@@ -72,10 +76,7 @@
                 <%}%>
         </div>
 
-        <div id="chat-box-div">
-            <%- include('_chat_box') %>
-    
-        </div>    
+           
     </div>
     
 </div>
@@ -96,6 +97,6 @@
 </script>
 <% if(locals.user){%>
     <script>
-        new ChatEngine('user-chat-box', '<%=locals.user.email%>')
+        new ChatEngine('user-chat-box', '<%=locals.user.email%>','<%=locals.user.avatar%>')
     </script>
 <%}%>
