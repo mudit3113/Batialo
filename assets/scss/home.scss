@@ -16,6 +16,7 @@
     }
     #user-friends-combo{
         width:25%;
+        position: relative;
         padding: 10px;
         border: 1px solid lightgray;
         height: 100%;
@@ -25,14 +26,12 @@
         z-index: 2;
 
         #user-friends{
-            height:13%;
-            overflow: auto;
+            height:50%;
 
         }
 
         #user-only{
-            height:13%;
-            overflow: auto;
+            height:50%;
 
         }
 

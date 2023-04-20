@@ -9,16 +9,27 @@
     padding-bottom: 40px;
     box-shadow: 1px 1px 1px 1px black;
     z-index: 10;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    ::-webkit-scrollbar {
+        display: none;
+    }
 
     #chat-nav{
         position: inherit;
         height:30px;
         width: 300px;
-        background-color: lightgray;
+        background-color: dodgerblue;
+        color: white;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         text-align: center;
+
+        div{
+            vertical-align: middle;
+        }
 
     }
 

@@ -8,16 +8,23 @@
   padding: 5px;
   padding-bottom: 40px;
   box-shadow: 1px 1px 1px 1px black;
-  z-index: 10; }
+  z-index: 10;
+  overflow: scroll;
+  overflow-x: hidden; }
+  #user-chat-box ::-webkit-scrollbar {
+    display: none; }
   #user-chat-box #chat-nav {
     position: inherit;
     height: 30px;
     width: 300px;
-    background-color: lightgray;
+    background-color: dodgerblue;
+    color: white;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     text-align: center; }
+    #user-chat-box #chat-nav div {
+      vertical-align: middle; }
   #user-chat-box #chat-messages-list {
     list-style: none;
     padding: 10px;

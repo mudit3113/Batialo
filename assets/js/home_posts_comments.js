@@ -55,7 +55,7 @@ class PostComments{
         return $(`<li id="comment-${comment._id}" >
         <p>
             <small>
-                <a class="delete-comment-button" href="/comments/destroy/${comment._id}">X</a>
+                <a class="delete-comment-button" href="/comments/destroy/${comment._id}"> <i class="fa fa-window-close"></i> &nbsp</a>
             </small>
                 ${comment.content}
             <small>
@@ -64,7 +64,7 @@ class PostComments{
             <br>
             <small>
                 <a class="toggle-like-button" data-likes="0" href="/likes/toggle/?id=${comment._id}&type=Comment">
-                                    0 Likes
+                <i class="fa fa-heart" style="color:red"></i> &nbsp  0 Likes
                 </a>
             </small>
         </p>
